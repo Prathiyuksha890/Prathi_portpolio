@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R.Prathiyuksha Portfolio</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:white;
+}
+
+header{
+    background:blueviolet;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:3px solid white;
+}
+
+section{
+    width:80%;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px lightgray;
+}
+
+h2{
+    color:blueviolet;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table,th,td{
+    border:1px solid orange;
+}
+
+th{
+    background:orange;
+    color:white;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+footer{
+    background:gray;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+#msg{
+    text-align:center;
+    color:blue;
+    font-size:20px;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="profile.jpg" alt="Profile">
+<h1 id="name">R.Prathiyuksha</h1>
+
+<p>Final Year CS&Business system student</p>
+
+<h3 id="clock"></h3>
+
+</header>
+
+<p id="msg"></p>
+
+<section>
+
+<h2>About Me</h2>
+
+<p>
+I am a Final Year B.Tech Computer science and business systems student
+at Akshaya College of Engineering and Technology.
+I am interested in Business systems,
+Business Analytics and Web Development.
+</p>
+
+<p><b>CGPA:</b> 7.54</p>
+
+<p id="date"></p>
+
+</section>
+
+<section>
+
+<h2>Technical Skills</h2>
+
+<ul>
+<li>Python</li>
+<li>Java</li>
+<li>C</li>
+<li>Machine Learning</li>
+<li>MySQL</li>
+<li>GitHub</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>Projects</h2>
+
+<ol>
+<li>laser security alaram using IOT</li>
+<li>paper evaluation and grading systems using python</li>
+<li>fake news detection using AI&ML</li>
+</ol>
+
+</section>
+
+<section>
+
+<h2>Education</h2>
+
+<table>
+
+<tr>
+<th>Qualification</th>
+<th>Institution</th>
+<th>Year</th>
+</tr>
+
+<tr>
+<td>B.Tech CS&BS</td>
+<td>Akshaya College of Engineering and Technology</td>
+<td>2027</td>
+</tr>
+
+<tr>
+<td>HSC</td>
+<td>MSR Matric hr sce school</td>
+<td>2023</td>
+</tr>
+
+</table>
+
+</section>
+
+<section>
+
+<h2>Achievements</h2>
+
+<ul>
+<li>third price in techday first day</li>
+<li>50+ Problems Solved in LeetCode</li>
+<li>1 HackerRank Skill Badges</li>
+</ul>
+
+</section>
+
+<footer>
+
+<p>&copy; <span id="year"></span><R class="Prathiyuksha"></R> Portfolio</p>
+
+</footer>
+
+<script>
+
+// Alert
+window.onload=function(){
+    alert("Welcome to R.Prathiyuksha Portfolio");
+}
+
+// Digital Clock using setInterval()
+
+function clock(){
+
+let t=new Date();
+
+let h=String(t.getHours()).padStart(2,"0");
+let m=String(t.getMinutes()).padStart(2,"0");
+let s=String(t.getSeconds()).padStart(2,"0");
+
+document.getElementById("clock").innerHTML=
+h+":"+m+":"+s;
+
+}
+
+clock();
+
+setInterval(clock,1000);
+
+
+// Today's Date
+
+document.getElementById("date").innerHTML=
+"Today : "+new Date().toDateString();
+
+
+// Current Year
+
+document.getElementById("year").innerHTML=
+new Date().getFullYear();
+
+
+// setTimeout()
+
+setTimeout(function(){
+
+document.getElementById("msg").innerHTML=
+"Welcome to My Portfolio";
+
+},2000);
+
+
+// setInterval() Animation
+
+let colors=["red","blue","green","orange"];
+
+let i=0;
+
+setInterval(function(){
+
+document.getElementById("name").style.color=
+colors[i];
+
+i=(i+1)%colors.length;
+
+},1000);
+
+
+// Promise
+
+let promise=new Promise(function(resolve,reject){
+
+let success=true;
+
+if(success){
+resolve("Portfolio Loaded Successfully");
+}
+else{
+reject("Loading Failed");
+}
+
+});
+
+promise
+.then(function(result){
+
+console.log(result);
+
+})
+.catch(function(error){
+
+console.log(error);
+
+});
+
+</script>
+
+</body>
+</html>
